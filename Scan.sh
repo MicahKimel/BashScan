@@ -1,6 +1,9 @@
 #!/bin/bash
 # A simple script
-echo Start Scan $1 $2
+# To use simply call
+# bash ./Scan.sh ipadd outputfolder
+echo ------------------------------------------------
+echo Start Scan on $1 ip output into $2
 echo ------------------------------------------------
 
 sudo nmap -Pn -p- -sC -sV -v --min-rate=400 --min-parallelism=100 -oA $2/ports $1
