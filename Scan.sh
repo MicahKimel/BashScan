@@ -11,5 +11,7 @@ sudo nmap -sU -sC -sV -oA $2/udp $1 --top-ports 100 -T4 &
 sudo nmap -v --script=vuln --min-rate=400 --min-parallelism=40 -oA $2/vuln $1 &
 gobuster dir -w ~/SecLists/Discovery/Web-Content/raft-medium-words.txt -o $2/dir -u $1 &
 gobuster vhost -w ~/SecLists/Discovery/DNS/subdomains-top1million-110000.txt -o $2/vhost -u $1
+gobuster dir -w ~/SecLists/Discovery/Web-Content/raft-large-words.txt -o $2/large_dir -u $1 &
+gobuster vhost -w ~/SecLists/Discovery/DNS/bitquark-subdomains-top100000.txt -o $2/large_vhost -u $1
 
 echo ------------------------------------------------
